@@ -20,13 +20,13 @@ services:
       - frontend
     restart: always
     build:
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile
       context: ./nginx
     ports:
       - '3060:80'
   backend:
     build:
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile
       context: ./backend
     depends_on:
       - db
@@ -44,7 +44,7 @@ services:
      
   frontend:
     build:
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile
       context: ./frontend
     volumes:
       - /app/node_modules
