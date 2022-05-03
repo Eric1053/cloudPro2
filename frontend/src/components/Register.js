@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import axios from "axios";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
  
 const Register = () => {
     const [name, setName] = useState('');
@@ -13,7 +13,7 @@ const Register = () => {
     const Register = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:5000/users', {
+            await axios.post('/api/users', {
                 name: name,
                 email: email,
                 password: password,
@@ -61,7 +61,10 @@ const Register = () => {
                                     </div>
                                 </div>
                                 <div className="field mt-5">
-                                    <button className="button is-success is-fullwidth">Register</button>
+                                    <button className="button block is-success is-fullwidth">Register</button>
+                                    <Link to='/'>
+                                        <button className="button is-success is-fullwidth">Login Page</button>
+                                    </Link>
                                 </div>
                             </form>
                         </div>

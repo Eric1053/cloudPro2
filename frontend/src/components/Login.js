@@ -11,7 +11,7 @@ const Login = () => {
     const Auth = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:5000/login', {
+            await axios.post('/api/login', {
                 email: email,
                 password: password
             });
@@ -44,7 +44,7 @@ const Login = () => {
                                     </div>
                                 </div>
                                 <div className="field mt-5">
-                                    <button className="button is-success is-fullwidth">Login</button>
+                                    <button className="button block is-success is-fullwidth">Login</button>
                                     <Link to='/register'>
                                         <button className="button is-success is-fullwidth">Register</button>
                                     </Link>

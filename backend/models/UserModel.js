@@ -13,13 +13,7 @@ const Users = db.define('users',{
     password:{
         type: DataTypes.STRING
     },
-    bitcoin:{
-        type: DataTypes.FLOAT
-    },
-    eth: {
-        type: DataTypes.FLOAT
-    },
-    dogecoin:{
+    coin:{
         type: DataTypes.FLOAT
     },
     refresh_token:{
